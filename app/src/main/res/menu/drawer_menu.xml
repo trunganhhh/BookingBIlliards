@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_logged_in" android:visible="false">
+        <item
+            android:id="@+id/action_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Đăng xuất" />
+    </group>
+    <group android:id="@+id/group_logged_out">
+        <item
+            android:id="@+id/action_login"
+            android:icon="@drawable/ic_login"
+            android:title="Đăng nhập" />
+    </group>
+</menu> 

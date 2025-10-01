@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.trunganh.bookingbilliards.LoginFragment"
+        android:label="Đăng nhập">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.trunganh.bookingbilliards.RegisterFragment"
+        android:label="Đăng ký" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.trunganh.bookingbilliards.HomeFragment"
+        android:label="Trang chủ">
+        <action
+            android:id="@+id/action_homeFragment_to_tablesFragment"
+            app:destination="@id/navigation_tables" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_tables"
+        android:name="com.trunganh.bookingbilliards.TablesFragment"
+        android:label="Danh sách bàn">
+        <action
+            android:id="@+id/action_tablesFragment_to_homeFragment"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_tablesFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.trunganh.bookingbilliards.AccountFragment"
+        android:label="Tài khoản"
+        tools:layout="@layout/fragment_account">
+        <action
+            android:id="@+id/action_accountFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/navigation_account"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_accountFragment_to_accountManagementFragment"
+            app:destination="@id/accountManagementFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountManagementFragment"
+        android:name="com.trunganh.bookingbilliards.AccountManagementFragment"
+        android:label="Quản lý tài khoản"
+        tools:layout="@layout/fragment_account_management" />
+
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.trunganh.bookingbilliards.MenuFragment"
+        android:label="Menu" />
+
+    <fragment
+        android:id="@+id/navigation_booked_tables"
+        android:name="com.trunganh.bookingbilliards.BookedTablesFragment"
+        android:label="Bàn đã đặt" />
+
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.trunganh.bookingbilliards.BookingFragment"
+        android:label="Đặt bàn">
+         <argument
+            android:name="tableId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.trunganh.bookingbilliards.NotificationsFragment"
+        android:label="Thông báo" />
+
+</navigation> 
